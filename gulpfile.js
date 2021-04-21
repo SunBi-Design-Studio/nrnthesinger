@@ -10,7 +10,10 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
 
-//Copying the twig to HTML
+/*
+  Twig to Html Task
+  -> This task will convert all the twig files we create into the HTML templates in the dist folder.
+*/
 gulp.task("twig", function () {
   return gulp
     .src(["src/**/*.twig", "!src/**/_*.twig"])
@@ -19,17 +22,26 @@ gulp.task("twig", function () {
     .pipe(gulp.dest("dist"));
 });
 
-//Optimizing Images
+/*
+  Image Minify
+  -> This task will minify all the images inside the img folder and copy it to the dist/img folder.
+*/
 gulp.task("imageMin", async () => {
   gulp.src("src/img/*").pipe(imagemin()).pipe(gulp.dest("dist/img"));
 });
 
-//Minifying Js
+/*
+  Ugify Js
+  -> This will make the js ugly also minified.
+*/
 gulp.task("minifyJs", async () => {
   gulp.src("src/js/*.js").pipe(uglify()).pipe(gulp.dest("dist/js"));
 });
 
-//SCSS Compiling
+/*
+  SASS Compiling
+  -> This will compile our sass and will copy into the dist/css folder.
+*/
 gulp.task("sass", async () => {
   gulp
     .src("src/sass/main.scss")
@@ -76,4 +88,5 @@ gulp.task("browser-reload", function (cb) {
   cb();
 });
 
+module.exports.build = gulp.series("build");
 module.exports.serve = gulp.series("build", watch);

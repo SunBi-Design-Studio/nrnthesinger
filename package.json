@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A gulp starter for the twig templating",
   "scripts": {
-    "serve": "npx gulp serve"
+    "serve": "npx gulp serve",
+    "build": "npx gulp build"
   },
   "keywords": [],
   "author": "",
