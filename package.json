@@ -1,7 +1,7 @@
 {
-  "name": "sayathari",
+  "name": "gulp-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A gulp starter for the twig templating",
   "scripts": {
     "serve": "npx gulp serve"
   },
