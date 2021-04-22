@@ -66,9 +66,9 @@ gulp.task("sass", async () => {
 //Default
 gulp.task(
   "build",
-  gulp.series("sass", "minifyJs", "twig", "imageMin"),
+  gulp.series("sass", "fonts", "minifyJs", "twig", "imageMin"),
   async () => {
-    console.log("Ola Gulp is Walking...");
+    console.log("Ola 🤭 Gulp is Walking...");
   }
 );
 
@@ -77,13 +77,19 @@ gulp.task(
 */
 const watch = async () => {
   gulp.watch("src/sass/**/*.scss", gulp.series("sass", "browser-reload"));
+  gulp.watch(
+    ["src/fonts/*.ttf", "src/fonts/*.txt"],
+    gulp.series("fonts", "browser-reload")
+  );
   gulp.watch("src/js/*.js", gulp.series("minifyJs", "browser-reload"));
   gulp.watch("src/**/*.twig", gulp.series("twig", "browser-reload"));
   gulp.watch("src/img/*", gulp.series("imageMin", "browser-reload"));
   httpserver.init(serveoptions);
 };
 
-//Devserver
+/*
+  Creating a live server with browser sync
+*/
 const serveoptions = {
   server: {
     baseDir: "./dist",
@@ -95,10 +101,20 @@ const serveoptions = {
 };
 const httpserver = devserver.create();
 
+/*
+  The task of the browser sync live server
+*/
 gulp.task("browser-reload", function (cb) {
   httpserver.reload();
   cb();
 });
 
+/*
+  Exporting the build tasks
+*/
 module.exports.build = gulp.series("build");
+
+/*
+  Exporting the production tasks with watch
+*/
 module.exports.serve = gulp.series("build", watch);
