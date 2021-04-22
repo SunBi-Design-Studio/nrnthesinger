@@ -23,6 +23,15 @@ gulp.task("twig", function () {
 });
 
 /*
+  Copying fonts from source to dist
+*/
+gulp.task("fonts", function () {
+  return gulp
+    .src(["src/fonts/*.ttf", "src/fonts/*.txt"])
+    .pipe(gulp.dest("dist/fonts"));
+});
+
+/*
   Image Minify
   -> This task will minify all the images inside the img folder and copy it to the dist/img folder.
 */
@@ -41,6 +50,7 @@ gulp.task("minifyJs", async () => {
 /*
   SASS Compiling
   -> This will compile our sass and will copy into the dist/css folder.
+  -> Remove the outputStyle parameter for the non minified scss output.
 */
 gulp.task("sass", async () => {
   gulp
@@ -62,7 +72,9 @@ gulp.task(
   }
 );
 
-//Watching
+/*
+  This task will watch for the changes you declare here.
+*/
 const watch = async () => {
   gulp.watch("src/sass/**/*.scss", gulp.series("sass", "browser-reload"));
   gulp.watch("src/js/*.js", gulp.series("minifyJs", "browser-reload"));
