@@ -1,5 +1,12 @@
 @import "./var/colors";
 
+//Importing the layouts
+@import "./layout/header";
+@import "./layout/footer";
+
+//Importing Pages
+@import "./pages/home";
+
 html,
 body {
   font-family: Montserrat;

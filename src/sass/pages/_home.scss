@@ -1,0 +1,15 @@
+.page-top {
+  background-color: $primary-color;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .body {
+    text-align: center;
+    .gitlink {
+      a {
+        color: #777;
+      }
+    }
+  }
+}
