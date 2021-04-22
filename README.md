@@ -1,6 +1,28 @@
-### Gulp Starter
+# Gulp Starter for Twig Templating
 
-This is a gulp starter for twig templating.
+## What is *Gulp Starter*?
+
+Gulp Starter is the twig templating starter pack. It consist of some pre configured gulpjs setting for creating an HTML templates with twig. It was always geting an extra burden of work when I need to start my templating works. So, I planned to create this repo which will consist of all the basic files pre configured. This lets me just clone this repo and start templating 😉.
+
+## Folder Structure 
+
+
+```
+|__src
+|  |__ fonts
+|  |__ img
+|  |__ js
+|  |__ layout
+|  |__ sass
+|__ index.twig
+|__ .gitignore
+|__ gulpfile.js
+|__ package.json
+|__ README.md
+
+
+```
+
 
 To begin first install the npm dependencies
 
