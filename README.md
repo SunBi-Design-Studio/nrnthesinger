@@ -4,15 +4,21 @@ This is a gulp starter for twig templating.
 
 To begin first install the npm dependencies
 
-`npm install`
+```
+npm install
+```
 
 To run the engine. It will create the build folder with all the HTML files.
 
-`npm run serve`
+```
+npm run serve
+```
 
 To build only
 
-`npm run build`
+```
+npm run build
+```
 
 It is configured with the following.
 
