@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",n=>{const i=document.getElementById("timer");function o(n){return n=(n=n<10&&0<=n?"0"+n:n)<0?"59":n}i.innerHTML="2:0",function n(){var e=i.innerHTML;var t=e.split(/[:]+/);var e=t[0];var t=o(t[1]-1);59==t&&(e-=1);0<=e&&(console.log(e),i.classList.toggle("warning",0===e||"0"===e),i.innerHTML=e+":"+t,setTimeout(n,1e3))}()});

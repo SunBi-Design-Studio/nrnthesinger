@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",e=>{[...document.querySelectorAll(".form--inline input")].map(e=>{e.addEventListener("keyup",e=>{var n=e.keyCode||e.charCode;let t=e.currentTarget;8!=n&&46!=n?(t.nextElementSibling||document.getElementById("otpsubmit")).focus():t.previousElementSibling&&t.previousElementSibling.focus()})})});
