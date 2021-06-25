@@ -11,7 +11,7 @@ Audition</title>
       type="image/png"
       sizes="32x32"
     />
-    <meta name="theme-color" content="#e8d800" />
+    <meta name="theme-color" content="#103d7d" />
     <!-- CSS only -->
     <link href="css/normalize.css" rel="stylesheet" />
 
@@ -69,7 +69,7 @@ Audition</title>
   </a>
 </section>
 <main class="page--signup">
-  <form class="signup form" action="otp">
+  <form class="signup form" action="./complete.twig">
     <div class="form--inline">
       <div class="form--group">
         <label for="name" class="form--label">Name</label>
@@ -125,17 +125,11 @@ Audition</title>
     <div class="form--inline">
       <div class="form--group">
         <label for="file" class="form--label">Upload Audio content</label>
-        <input
-          class="form--input form--file"
-          required
-          id="file"
-          type="file"
-          accept=""
-        />
+        <input class="form--input form--file" id="file" type="file" accept="" />
       </div>
       <div class="form--group">
         <label for="url" class="form--label">or Paste video url</label>
-        <input class="form--input" required id="url" type="text" accept="" />
+        <input class="form--input" id="url" type="text" accept="" />
       </div>
     </div>
 
