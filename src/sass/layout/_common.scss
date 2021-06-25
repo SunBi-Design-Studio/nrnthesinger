@@ -1,0 +1,75 @@
+.para {
+  font-size: 1em;
+  color: $white;
+}
+.text--center {
+  text-align: center;
+}
+.link {
+  color: $white;
+  text-decoration: none;
+  //   &:hover {
+  //     color: $primary;
+  //   }
+}
+.container {
+  width: 1300px;
+
+  margin: auto;
+  @include resp-cust(1320px) {
+    width: 90%;
+  }
+  @include sm {
+    width: 100%;
+  }
+}
+.tooltip {
+  position: absolute;
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  svg {
+    height: 1.4em;
+    width: auto;
+  }
+  &:hover {
+    .tooltip--para {
+      display: block;
+    }
+  }
+  .tooltip--para {
+    background-color: $black;
+    color: $secondary;
+    display: none;
+    position: absolute;
+    max-width: 300px;
+    width: max-content;
+    white-space: normal;
+    padding: 0.4em 1em;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 0.8em;
+  }
+}
+
+.section--title {
+  font-size: $font--lg;
+  font-weight: bold;
+  color: $white;
+}
+.title {
+  color: $black;
+  font-size: $font--md;
+  line-height: 1.5;
+}
+
+p.text {
+  color: $black;
+}
+
+grid {
+  display: grid;
+}
+card {
+  display: flex;
+}

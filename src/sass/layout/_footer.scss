@@ -1,6 +1,30 @@
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 10vh;
+  .link--wrapper {
+    // background-color: #5c9dd72e;
+    padding: 2em 4em;
+    display: flex;
+    justify-content: flex-start;
+    gap: 4em;
+    align-items: center;
+    .link {
+      color: $white;
+    }
+    @include sm {
+      padding: 1em 0;
+      gap: 1em;
+    }
+  }
+  .social {
+    margin-left: auto;
+    display: flex;
+    gap: 1em;
+    svg {
+      height: 1.5em;
+      width: auto;
+    }
+  }
+}
+
+body {
+  display: none;
 }

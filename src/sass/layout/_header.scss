@@ -1,6 +1,52 @@
-header {
+.center--logo {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 10vh;
+  position: relative;
+  z-index: 8;
+  margin-top: -100px;
+  @include sm {
+    margin-top: 0px;
+  }
+  a {
+    display: block;
+    @include sm {
+      text-align: center;
+    }
+    img {
+      // mix-blend-mode: darken;
+      height: 400px;
+      @include sm {
+        height: auto;
+        width: 90%;
+      }
+    }
+  }
+}
+
+header {
+  // position: fixed;
+  // top: 2em;
+  // left: 4em;
+  .container {
+    z-index: 3;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  svg,
+  img {
+    width: auto;
+    height: 2.5em;
+  }
+  a {
+    text-decoration: none;
+  }
+  .nrn img {
+    height: 3.5em;
+  }
+
+  @include sm {
+    grid-row-start: 5;
+  }
 }

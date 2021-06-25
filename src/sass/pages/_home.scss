@@ -1,14 +1,30 @@
-.page-top {
-  background-color: $primary-color;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .body {
+.quiz--home {
+  .wrapper {
+    width: 700px;
+    margin: auto;
+    max-width: 100%;
     text-align: center;
-    .gitlink {
-      a {
-        color: #777;
+    @include sm {
+      width: 100%;
+    }
+    .text {
+      width: 350px;
+      line-height: 1.5;
+      margin: auto;
+    }
+    .btn--center {
+      flex-direction: column;
+      gap: 1.5em;
+
+      button {
+        text-transform: uppercase;
+        width: 420px;
+        height: 60px;
+        max-width: 100%;
+        @include sm {
+          width: 200px;
+          height: 50px;
+        }
       }
     }
   }

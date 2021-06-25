@@ -1,0 +1,108 @@
+.form {
+  color: $white;
+  input,
+  select {
+    box-shadow: none;
+    outline: none;
+    color: $white;
+  }
+  .form--inline {
+    display: flex;
+    gap: 1.5em;
+    margin: 1.5em 0;
+    @include sm {
+      flex-wrap: wrap;
+    }
+    .form--group {
+      position: relative;
+      flex-grow: 2;
+      width: 50%;
+    }
+    .form--label {
+      position: absolute;
+      top: -9px;
+      left: 1em;
+      background-color: $primary;
+      padding: 0 0.5em;
+      z-index: 2;
+    }
+    .form--input {
+      height: 46px;
+      background-color: $primary;
+      box-shadow: none;
+      outline: none;
+      border: 1px solid #9b9b9b;
+      border-radius: 6px;
+      padding: 0 1em;
+      width: calc(100% - 2em);
+      &.ph {
+        display: flex;
+        align-items: center;
+        span {
+          border-right: 1px solid $white;
+          padding-right: 1em;
+        }
+        input {
+          flex-grow: 2;
+          margin-left: 1em;
+          border: 0;
+          height: 90%;
+          background-color: transparent;
+        }
+      }
+    }
+    .form--select {
+      width: 100%;
+    }
+    .form--textarea {
+      height: 70px;
+      padding-top: 1em;
+      color: $white;
+    }
+    .form--file {
+      padding-top: 12px;
+      height: 35px;
+    }
+  }
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+label {
+  cursor: pointer;
+}
+
+.btn--center {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 3em 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+  color: $white;
+  border: 1px solid $white;
+  font-size: $font--md;
+  background-color: transparent;
+  padding: 0.8em 7em;
+  font-weight: 500;
+  border-radius: 6px;
+  @include transition;
+  cursor: pointer;
+  &:hover,
+  &.active {
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+  }
+  @include sm {
+    padding: 0.8em 2em;
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,60 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+//For Small
+@mixin sm {
+  @media screen and (max-width: ($sm)) {
+    @content;
+  }
+}
+
+//For Medium
+@mixin md {
+  @media screen and (max-width: ($md)) {
+    @content;
+  }
+}
+
+//For large
+@mixin lg {
+  @media screen and (max-width: ($lg)) {
+    @content;
+  }
+}
+
+//For Extra Large
+@mixin xl {
+  @media screen and (max-width: ($xl)) {
+    @content;
+  }
+}
+
+//For Extra Extra Large
+@mixin xxl {
+  @media screen and (max-width: ($xxl)) {
+    @content;
+  }
+}
+
+//Custom Breakpoint
+@mixin resp-cust($cust) {
+  @media screen and (max-width: ($cust)) {
+    @content;
+  }
+}
+
+.container {
+  @include xl {
+    max-width: 100% !important;
+    padding: 0 2em;
+  }
+  @include md {
+    padding: 0 1em;
+  }
+  @include sm {
+    padding: 0 0.75em;
+  }
+}

@@ -1,0 +1,31 @@
+@import "./responsive";
+
+@mixin transition-out {
+  transition: 0.3s ease-out;
+}
+
+@mixin transition-in {
+  transition: 0.3s ease-in;
+}
+@mixin transition {
+  transition: 0.3s linear;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin image {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
