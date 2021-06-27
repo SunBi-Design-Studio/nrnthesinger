@@ -18,8 +18,13 @@ footer {
     margin-left: auto;
     display: flex;
     gap: 1em;
+    align-items: center;
     svg {
       height: 1.5em;
+      width: auto;
+    }
+    img {
+      height: 2.2em;
       width: auto;
     }
   }
