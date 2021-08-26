@@ -6,7 +6,7 @@ Audition{% endblock %} {% block javascripts %} {% endblock %} {% block contents
   <img src="./img/gyrewhite.png" alt="gyre" class="img--gyre" />
 </div>
 <main class="page--signup">
-  <form class="signup form" action="./complete.twig">
+  <form class="signup form" action="./complete.twig" id="audition">
     <div class="form--inline">
       <div class="form--group">
         <label for="name" class="form--label">Name</label>
@@ -65,16 +65,6 @@ Audition{% endblock %} {% block javascripts %} {% endblock %} {% block contents
         <input class="form--input" id="url" type="text" accept="" />
       </div>
     </div>
-    <div class="progress hide">
-      <div
-        class="progress-bar"
-        role="progressbar"
-        aria-valuenow="25"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      ></div>
-    </div>
-
     <div class="winner">
       <div class="form--inline">
         <div class="form--group">
@@ -96,6 +86,16 @@ Audition{% endblock %} {% block javascripts %} {% endblock %} {% block contents
     <div class="btn--center">
       <button type="submit" class="btn" disabled id="apply">Apply</button>
     </div>
+    <div class="progress hide">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        aria-valuenow=""
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <p id="per" class="hide"><span>0</span>%</p>
   </form>
 </main>
 
@@ -116,20 +116,37 @@ Audition{% endblock %} {% block javascripts %} {% endblock %} {% block contents
       }
     });
 
-    document.getElementById("file").addEventListener("change", (e) => {
+    document.getElementById("audition").addEventListener("submit", (e) => {
+      e.preventDefault();
       let progress = document.querySelector(".progress");
+      let percentage = document.querySelector("#per span");
       progress.classList.remove("hide");
       progress.querySelector(".progress-bar").classList.add("restart");
+      document.querySelector("#per").classList.remove("hide");
+
       progress.querySelector(".progress-bar").classList.remove("sucess");
       progress.querySelector(".progress-bar").classList.remove("error");
       setTimeout(() => {
+        percentage.innerText = 0;
+        progress.querySelector(".progress-bar").style.width = 0 + "%";
         progress.querySelector(".progress-bar").classList.remove("restart");
-      }, 300);
+        setInterval(() => {
+          let per = parseInt(percentage.innerText);
+          console.log("per ", per);
 
-      setTimeout(
-        () => progress.querySelector(".progress-bar").classList.add("sucess"),
-        4000
-      );
+          if (percentage.innerText < 90) {
+            per++;
+            percentage.innerText = per;
+            progress.querySelector(".progress-bar").style.width = per + "%";
+          }
+        }, 100);
+      }, 1000);
+
+      setTimeout(() => {
+        progress.querySelector(".progress-bar").classList.add("sucess");
+        clearInterval();
+        percentage.innerText = 100;
+      }, 4000);
     });
   });
 </script>
